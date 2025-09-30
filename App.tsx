@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Моё первое приложение на React Native</Text>
-      <StatusBar style="auto" />
+import Input from './shared/Input';
+import Button from './shared/Button';
+import { Colors, Gaps } from './shared/tokens';
+import Notification from './shared/Notification';
+
+const App = () => (
+  <View style={s.pageContainer}>
+    <Notification text="Неправильный логин или пароль" />
+
+    <View style={s.contentContainer}>
+      <Image source={require('./assets/logo.png')} style={s.logo} resizeMode="contain" />
+
+      <View style={s.form}>
+        <Input placeholder="Email" />
+        <Input isPassword placeholder="Пароль" />
+        <Button text="Войти" />
+      </View>
+
+      <Text style={{ color: Colors.link }}>Восстановить пароль</Text>
     </View>
-  );
-}
+  </View>
+);
 
-const styles = StyleSheet.create({
-  container: {
+export default App;
+
+const s = StyleSheet.create({
+  pageContainer: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: Colors.black,
   },
+  logo: { width: 220 },
+  contentContainer: {
+    width: '100%',
+    paddingHorizontal: 55,
+    gap: Gaps.g50,
+    alignItems: 'center',
+  },
+  form: { gap: Gaps.g16, alignSelf: 'stretch' },
 });
