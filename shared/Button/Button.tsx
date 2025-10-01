@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Animated, GestureResponderEvent, Pressable, PressableProps, Text } from 'react-native';
 
-import s from './styles';
+import s from './Button.styles';
 import { Colors } from '../tokens';
 
 interface IButton extends PressableProps {

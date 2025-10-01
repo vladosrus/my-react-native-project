@@ -1,16 +1,16 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-import Input from './shared/Input';
-import Button from './shared/Button';
-import { Colors, Gaps } from './shared/tokens';
-import Notification from './shared/Notification';
+import Input from '../shared/Input';
+import Button from '../shared/Button';
+import { Colors, Gaps } from '../shared/tokens';
+import Notification from '../shared/Notification';
 
 const App = () => (
   <View style={s.pageContainer}>
     <Notification text="Неправильный логин или пароль" />
 
     <View style={s.contentContainer}>
-      <Image source={require('./assets/logo.png')} style={s.logo} resizeMode="contain" />
+      <Image source={require('../assets/logo.png')} style={s.logo} resizeMode="contain" />
 
       <View style={s.form}>
         <Input placeholder="Email" />
