@@ -18,7 +18,12 @@ export const Radius = {
   r10: 10,
 };
 
-export const Fonts = {
+export const FontSizes = {
   f16: 16,
   f18: 18,
+};
+
+export const FontFamilies = {
+  firaSans: 'FiraSans',
+  fisaSansSemiBold: 'FiraSansSemiBold',
 };

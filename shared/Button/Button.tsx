@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { Animated, GestureResponderEvent, Pressable, PressableProps, Text } from 'react-native';
 
+import { Colors } from 'shared/tokens';
+
 import s from './Button.styles';
-import { Colors } from '../tokens';
 
 interface IButton extends PressableProps {
   text: string;

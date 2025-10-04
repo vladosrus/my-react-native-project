@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from 'react';
 import { Animated, Text } from 'react-native';
+import { FC, useEffect, useState } from 'react';
 
 import s from './Notification.styles';
 

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Colors, Fonts, Radius } from '../tokens';
+import { Colors, FontFamilies, FontSizes, Radius } from 'shared/tokens';
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   button: {
     width: '100%',
     height: 58,
@@ -10,7 +10,7 @@ const s = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  btnText: { color: Colors.white, fontSize: Fonts.f18 },
+  btnText: { color: Colors.white, fontSize: FontSizes.f18, fontFamily: FontFamilies.firaSans },
 });
 
-export default s;
+export default styles;

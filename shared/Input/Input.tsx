@@ -1,9 +1,10 @@
+import { FC, useState } from 'react';
 import { Pressable, TextInput, TextInputProps, View } from 'react-native';
 
+import { Colors } from 'shared/tokens';
+import { EyeClosedIcon, EyeOpenedIcon } from 'assets/icons';
+
 import s from './Input.styles';
-import { Colors } from '../tokens';
-import { FC, useState } from 'react';
-import { EyeClosedIcon, EyeOpenedIcon } from '../../assets/icons';
 
 interface IInput extends TextInputProps {
   isPassword?: boolean;

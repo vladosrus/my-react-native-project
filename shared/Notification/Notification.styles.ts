@@ -1,5 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
-import { Colors, Fonts } from '../tokens';
+
+import { Colors, FontSizes } from 'shared/tokens';
 
 const s = StyleSheet.create({
   container: {
@@ -12,7 +13,7 @@ const s = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: Colors.error,
   },
-  text: { color: Colors.white, fontSize: Fonts.f16, textAlign: 'center' },
+  text: { color: Colors.white, fontSize: FontSizes.f16, textAlign: 'center' },
 });
 
 export default s;

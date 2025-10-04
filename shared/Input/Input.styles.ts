@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { Colors, Radius } from '../tokens';
+
+import { Colors, FontFamilies, Radius } from 'shared/tokens';
 
 const s = StyleSheet.create({
   input: {
@@ -8,6 +9,7 @@ const s = StyleSheet.create({
     backgroundColor: Colors.violetDark,
     paddingHorizontal: 26,
     fontSize: 16,
+    fontFamily: FontFamilies.firaSans,
     color: Colors.white,
   },
   eyeIcon: { position: 'absolute', right: 0, paddingHorizontal: 24, paddingVertical: 17 },
