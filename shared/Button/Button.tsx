@@ -1,5 +1,12 @@
+import {
+  Text,
+  Animated,
+  Pressable,
+  PressableProps,
+  ActivityIndicator,
+  GestureResponderEvent,
+} from 'react-native';
 import { FC } from 'react';
-import { Animated, GestureResponderEvent, Pressable, PressableProps, Text } from 'react-native';
 
 import { Colors } from 'shared/tokens';
 
@@ -7,9 +14,10 @@ import s from './Button.styles';
 
 interface IButton extends PressableProps {
   text: string;
+  isLoading?: boolean;
 }
 
-const Button: FC<IButton> = ({ text, onPressIn, onPressOut, ...props }) => {
+const Button: FC<IButton> = ({ text, isLoading, onPressIn, onPressOut, ...props }) => {
   const animationValue = new Animated.Value(100);
   const color = animationValue.interpolate({
     inputRange: [0, 100],
@@ -39,7 +47,9 @@ const Button: FC<IButton> = ({ text, onPressIn, onPressOut, ...props }) => {
   return (
     <Pressable {...props} onPressIn={hoverIn} onPressOut={hoverOut}>
       <Animated.View style={{ ...s.button, backgroundColor: color }}>
-        <Text style={s.btnText}>{text}</Text>
+        {!isLoading && <Text style={s.btnText}>{text}</Text>}
+
+        {isLoading && <ActivityIndicator size="large" color={Colors.white} />}
       </Animated.View>
     </Pressable>
   );

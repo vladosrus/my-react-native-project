@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import s from './Notification.styles';
 
 interface INotification {
-  text?: string;
+  text?: string | null;
 }
 
 const Notification: FC<INotification> = ({ text }) => {
