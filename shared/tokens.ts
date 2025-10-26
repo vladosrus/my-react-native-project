@@ -28,6 +28,6 @@ export const FontSizes = {
 };
 
 export const FontFamilies = {
-  firaSans: 'FiraSans',
-  firaSansSemiBold: 'FiraSansSemiBold',
+  firaSans: 'FiraSans-Regular',
+  firaSansSemiBold: 'FiraSans-SemiBold',
 };

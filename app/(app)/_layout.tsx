@@ -2,11 +2,10 @@ import { useAtomValue } from 'jotai';
 import { Redirect } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import { Drawer } from 'expo-router/drawer';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+import CustomDrawer from 'widgets/layout/ui/CustomDrawer';
 import MenuButton from 'features/layout/ui/MenuButton';
 import { authAtom } from 'entities/auth/model/auth.state';
-import CustomDrawer from 'entities/layout/ui/CustomDrawer';
 import { Colors, FontFamilies, FontSizes } from 'shared/tokens';
 
 const AppLayout = () => {
@@ -17,23 +16,21 @@ const AppLayout = () => {
   }
 
   return (
-    <GestureHandlerRootView>
-      <Drawer
-        drawerContent={props => <CustomDrawer {...props} />}
-        screenOptions={({ navigation }) => ({
-          headerStyle: s.header,
-          headerTitleStyle: s.headerTitle,
-          headerTitleAlign: 'center',
-          headerLeft: () => <MenuButton navigation={navigation} />,
-          sceneStyle: s.scene,
-        })}
-      >
-        <Drawer.Screen name="index" options={{ title: 'Мои курсы' }} />
-        <Drawer.Screen name="course/[type]" />
-        <Drawer.Screen name="profile" options={{ title: 'Профиль' }} />
-        <Drawer.Screen name="club" options={{ title: 'Клуб' }} />
-      </Drawer>
-    </GestureHandlerRootView>
+    <Drawer
+      drawerContent={props => <CustomDrawer {...props} />}
+      screenOptions={({ navigation }) => ({
+        headerStyle: s.header,
+        headerTitleStyle: s.headerTitle,
+        headerTitleAlign: 'center',
+        headerLeft: () => <MenuButton navigation={navigation} />,
+        sceneStyle: s.scene,
+      })}
+    >
+      <Drawer.Screen name="index" options={{ title: 'Мои курсы' }} />
+      <Drawer.Screen name="course/[type]" />
+      <Drawer.Screen name="profile" options={{ title: 'Профиль' }} />
+      <Drawer.Screen name="club" options={{ title: 'Клуб' }} />
+    </Drawer>
   );
 };
 

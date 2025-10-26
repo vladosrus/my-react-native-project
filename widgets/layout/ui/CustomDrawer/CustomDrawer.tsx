@@ -5,11 +5,11 @@ import { DrawerContentComponentProps, DrawerContentScrollView } from '@react-nav
 
 import CloseDrawerButton from 'features/layout/ui/CloseDrowerButton';
 import MenuUserProfileInfo from 'entities/user/ui/MenuUserProfileInfo';
+import MenuItem, { IMenuItem } from 'entities/layout/ui/MenuItem';
 import { loadProfileAtom } from 'entities/user/model/user.state';
 import { logoutAtom } from 'entities/auth/model';
 import CustomLink from 'shared/CustomLink';
 import { Colors, Gaps } from 'shared/tokens';
-import MenuItem, { IMenuItem } from '../MenuItem';
 
 import { CrownIcon, EducationIcon, PersonIcon } from 'assets/icons';
 
