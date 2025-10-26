@@ -10,6 +10,7 @@ import Button from 'shared/Button';
 import Input from 'shared/Input';
 
 import s from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const LoginPage = () => {
   const setAuth = useSetAtom(authAtom);
@@ -34,7 +35,7 @@ const LoginPage = () => {
   }, [access_token]);
 
   return (
-    <>
+    <SafeAreaView style={{ ...s.pageContainer }}>
       <Notification text={error} />
 
       <View style={s.contentContainer}>
@@ -57,7 +58,7 @@ const LoginPage = () => {
 
         <CustomLink href="/restore" text="Восстановить пароль" />
       </View>
-    </>
+    </SafeAreaView>
   );
 };
 

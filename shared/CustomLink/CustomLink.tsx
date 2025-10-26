@@ -1,18 +1,17 @@
 import { FC } from 'react';
-import { LinkPreviewProps } from 'expo-router';
-import { Link, LinkPreviewStyle } from 'expo-router';
 import { StyleProp, Text, TextStyle } from 'react-native';
+import { Link, LinkPreviewStyle, LinkProps } from 'expo-router';
 
 import s from './CustomLink.styles';
 
-type CustomLinkProps = LinkPreviewProps & {
+interface ICustomLink extends LinkProps {
   text: string;
   href: string;
   linkStyle?: LinkPreviewStyle;
   textStyle?: StyleProp<TextStyle>;
-};
+}
 
-const CustomLink: FC<CustomLinkProps> = ({ text, href, linkStyle, textStyle, ...props }) => (
+const CustomLink: FC<ICustomLink> = ({ text, href, linkStyle, textStyle, ...props }) => (
   <Link href={href} style={linkStyle} {...props}>
     <Text style={[s.text, textStyle]}>{text}</Text>
   </Link>

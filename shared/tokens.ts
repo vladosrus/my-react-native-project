@@ -1,6 +1,7 @@
 export const Colors = {
   black: '#16171D',
   grey: '#AFB2BF',
+  greyDark: '#1E1F29',
   white: '#FAFAFA',
   violetDark: '#2E2D3D',
   primary: '#6C38CC',
@@ -10,6 +11,8 @@ export const Colors = {
 };
 
 export const Gaps = {
+  g8: 8,
+  g20: 20,
   g16: 16,
   g50: 50,
 };
@@ -21,9 +24,10 @@ export const Radius = {
 export const FontSizes = {
   f16: 16,
   f18: 18,
+  f20: 20,
 };
 
 export const FontFamilies = {
   firaSans: 'FiraSans',
-  fisaSansSemiBold: 'FiraSansSemiBold',
+  firaSansSemiBold: 'FiraSansSemiBold',
 };

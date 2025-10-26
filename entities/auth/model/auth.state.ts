@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { AuthResponse, LoginRequest } from './auth.interfaces';
+import { AuthResponse, AuthState, LoginRequest } from './auth.interfaces';
 import { API } from '../api';
 
 const storage = createJSONStorage<AuthState>(() => AsyncStorage);
@@ -18,8 +18,6 @@ export const loginAtom = atom(
     set(authAtom, { isLoading: true, access_token: null, error: null });
 
     try {
-      await new Promise<void>(resolve => setTimeout(() => resolve(), 2000));
-
       const { data } = await axios.post<AuthResponse>(API.login, { email, password });
 
       set(authAtom, { isLoading: false, access_token: data.accessToken, error: null });
@@ -36,9 +34,3 @@ export const loginAtom = atom(
 );
 
 export const logoutAtom = atom(null, async (_, set) => set(authAtom, INITIAL_STATE));
-
-export interface AuthState {
-  access_token: string | null;
-  isLoading: boolean;
-  error: string | null;
-}

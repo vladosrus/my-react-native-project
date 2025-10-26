@@ -1,5 +1,6 @@
 import { Animated, Text } from 'react-native';
 import { FC, useEffect, useState } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import s from './Notification.styles';
 
@@ -8,6 +9,7 @@ interface INotification {
 }
 
 const Notification: FC<INotification> = ({ text }) => {
+  const { top } = useSafeAreaInsets();
   const [isShown, setIsShown] = useState<boolean>(false);
   const animationValue = new Animated.Value(-100);
 
@@ -31,7 +33,7 @@ const Notification: FC<INotification> = ({ text }) => {
 
   return (
     <Animated.View
-      style={{ ...s.container, transform: [{ translateY: animationValue }] }}
+      style={{ ...s.container, top: top, transform: [{ translateY: animationValue }] }}
       onLayout={onEnterText}
     >
       <Text style={s.text}>{text}</Text>

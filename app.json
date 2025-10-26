@@ -27,13 +27,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-font",
-        { "fonts": ["./assets/fonts/FiraSans-Regular.ttf", "./assets/fonts/FiraSans-SemiBold.ttf"] }
-      ],
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "scheme": "my-app-scheme"
   }
 }
