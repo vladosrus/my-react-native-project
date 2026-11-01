@@ -6,3 +6,4 @@ export * from './profile';
 export * from './person';
 export * from './education';
 export * from './crown';
+export * from './upload';

@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
+import { Slot } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { Slot, SplashScreen } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { FontFamilies } from 'shared/tokens';
